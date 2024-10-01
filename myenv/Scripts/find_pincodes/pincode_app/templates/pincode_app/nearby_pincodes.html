@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Pincodes</title>
+</head>
+<body>
+    <h1>Nearby Pincodes</h1>
+    <ul>
+        {% for item in nearby_list %}
+            <li>{{ item.pincode }} - {{ item.distance|floatformat:2 }} km away</li>
+        {% empty %}
+            <li>No nearby pincodes found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'find_nearby_pincodes' %}">Search Again</a>
+</body>
+</html>
