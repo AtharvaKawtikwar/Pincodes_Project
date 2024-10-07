@@ -2,7 +2,7 @@ from django.db import models
 import json
 
 class Pincode(models.Model):
-    pincode = models.CharField(max_length=6, unique=True)
+    pincode = models.CharField(max_length=10, unique=True)
     latitude = models.FloatField(null=True, blank=True)
     longitude = models.FloatField(null=True, blank=True)
     state_name = models.CharField(max_length=100)
